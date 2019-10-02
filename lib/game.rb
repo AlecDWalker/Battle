@@ -14,10 +14,10 @@ class Game
   end
 
   def switch_player
-    if current_player = player1
-      current_player = player2
+    if @current_player = @player1
+      @current_player = @player2
     else
-      current_player = player1
+      @current_player = @player1
     end
   end
 
