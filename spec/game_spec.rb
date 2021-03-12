@@ -23,7 +23,7 @@ describe Game do
   describe '#attack' do
     it 'returns the HP of attacked player' do
       expect(player2).to receive(:receive_damage)
-      game.attack(player2)
+      game.attack(player2, 1)
     end
   end
 

@@ -10,7 +10,7 @@ describe Player do
 
   describe '#receive_damage' do
     it "reduces attacked player's HP by 10" do
-      player.receive_damage
+      player.receive_damage(1)
       expect(player.hit_points).to eq 50
     end
   end
