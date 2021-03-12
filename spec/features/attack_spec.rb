@@ -1,7 +1,14 @@
 feature 'Attack' do
+
+  scenario "PLayers have 3 seprate atack options" do
+    sign_in_and_play
+    expect(page).to have_button 'Attack'
+    expect(page).to have_button 'Safe attack'
+    expect(page).to have_button 'Risky attack'
+  end
   scenario "Player1 attacks Player2" do
     sign_in_and_play
-    click_button 'Attack'
+    click_button 'Safe attack'
     expect(page).to have_content 'Dave attacked Mittens'
   end
   scenario 'be attacked by Player 2' do

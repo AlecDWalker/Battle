@@ -23,7 +23,27 @@ class Battle < Sinatra::Base
 
   post '/attack' do
     @game = $game
+    @game.attack(@game.opponent_of(@game.current_turn), rand(8..12))
+    if @game.game_over?
+      redirect '/game-over'
+    else
+      redirect '/attack'
+    end
+  end
+
+  post '/safeattack' do
+    @game = $game
     @game.attack(@game.opponent_of(@game.current_turn))
+    if @game.game_over?
+      redirect '/game-over'
+    else
+      redirect '/attack'
+    end
+  end
+
+  post '/riskyattack' do
+    @game = $game
+    @game.attack(@game.opponent_of(@game.current_turn), rand(5..15))
     if @game.game_over?
       redirect '/game-over'
     else
