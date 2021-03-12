@@ -23,7 +23,8 @@ class Battle < Sinatra::Base
 
   post '/attack' do
     @game = $game
-    @game.attack(@game.opponent_of(@game.current_turn), rand(8..12))
+    @damage = rand(8..12)
+    @game.attack(@game.opponent_of(@game.current_turn), @damage)
     if @game.game_over?
       redirect '/game-over'
     else
@@ -33,6 +34,7 @@ class Battle < Sinatra::Base
 
   post '/safeattack' do
     @game = $game
+    @damage = 10
     @game.attack(@game.opponent_of(@game.current_turn))
     if @game.game_over?
       redirect '/game-over'
@@ -43,7 +45,8 @@ class Battle < Sinatra::Base
 
   post '/riskyattack' do
     @game = $game
-    @game.attack(@game.opponent_of(@game.current_turn), rand(5..15))
+    @damage = rand(5..15)
+    @game.attack(@game.opponent_of(@game.current_turn), @damage)
     if @game.game_over?
       redirect '/game-over'
     else
