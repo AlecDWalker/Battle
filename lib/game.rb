@@ -11,8 +11,8 @@ class Game
    @game_over = false
   end
 
-  def attack(player, multiplier)
-    player.receive_damage(multiplier)
+  def attack(player)
+    player.receive_damage(multiplier=1)
   end
 
   def current_turn

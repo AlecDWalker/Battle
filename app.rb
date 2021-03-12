@@ -23,7 +23,7 @@ class Battle < Sinatra::Base
 
   post '/attack' do
     @game = $game
-    @game.attack(@game.opponent_of(@game.current_turn), 1)
+    @game.attack(@game.opponent_of(@game.current_turn))
     if @game.game_over?
       redirect '/game-over'
     else
