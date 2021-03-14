@@ -18,6 +18,13 @@ feature 'Attack' do
     click_button 'Attack'
     expect(page).to have_content 'Mittens attacked Dave'
   end
+  scenario 'Computer opponent attacks back automatically' do
+    visit('/')
+    fill_in :player, with: 'Dave'
+    click_button 'Start 1 player game'
+    attack_and_confirm
+    expect(page).to have_content 'Computer attacked Dave'
+  end
   scenario 'reduce Player 1 HP by 10 when attacked' do
     sign_in_and_play
     2.times { attack_and_confirm }
