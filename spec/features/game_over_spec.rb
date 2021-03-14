@@ -12,7 +12,7 @@ feature 'Game over' do
       10.times {attack_and_confirm}
       click_button 'Safe attack'
       click_button 'Start Again?'
-      expect(page).to have_content "Sign in to play"
+      expect(page).to have_content "Please choose a game type"
     end
   end
 end

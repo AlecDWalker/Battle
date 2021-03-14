@@ -1,6 +1,19 @@
  <h1> Battle! </h1>
-<h2> Sign in to play </h2> 
+<h2> Please choose a game type </h2>
+
+<h3> Player vs Computer</h3>
+<form action="/names" method="post">
+
+<label for="name1">
+Player Name:
+   <input type="text" name="player">
+ </label>
+ <input type="submit" value="Start 1 player game">
+ </form>
+
+<h3> Player vs Player</h3>
  <form action="/names" method="post">
+
  <label for="name1">
  Player 1 Name:
     <input type="text" name="player1">
@@ -11,6 +24,5 @@
      <input type="text" name="player2">
   </label>
 
-  <input type="submit" value="Ready!">
+  <input type="submit" value="Start 2 player game">
   </form>
-  
