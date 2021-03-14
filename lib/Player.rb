@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Player
   DEFAULT_HIT_POINTS = 60
   attr_reader :name, :hit_points
@@ -8,7 +10,6 @@ class Player
   end
 
   def receive_damage(damage)
-    @hit_points -= (damage)
+    @hit_points -= damage
   end
-
 end

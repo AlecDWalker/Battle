@@ -1,39 +1,40 @@
+# frozen_string_literal: true
+
 require_relative 'Player'
 
 class Game
-  attr_reader :player1 , :player2, :current_turn , :game_over
+  attr_reader :player1, :player2, :current_turn, :game_over
 
   def initialize(player1, player2)
-   @player1 = player1
-   @player2 = player2
-   @players = [player1, player2]
-   @current_turn = player1
-   @game_over = false
+    @player1 = player1
+    @player2 = player2
+    @players = [player1, player2]
+    @current_turn = player1
+    @game_over = false
   end
 
   def attack(player, damage = 10)
     player.receive_damage(damage)
   end
 
-  def current_turn
-    @current_turn
-  end
+  attr_reader :current_turn
 
   def switch_turns
-  @current_turn = opponent_of(@current_turn)
+    @current_turn = opponent_of(@current_turn)
 end
 
-def opponent_of(the_player)
-  @players.select { |player| player != the_player }.first
-  end
+  def opponent_of(the_player)
+    @players.reject { |player| player == the_player }.first
+    end
 
-def game_over?
-  losing_players.any?
-  end
+  def game_over?
+    losing_players.any?
+    end
 
   def loser
     losing_players.first
   end
+
   private
 
   def losing_players

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 feature 'Start' do
   scenario 'Player is given the option of a human or somputer opponent' do
     visit('/')

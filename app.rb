@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'sinatra/base'
 require_relative './lib/Player'
 require_relative './lib/game'
@@ -18,7 +20,7 @@ class Battle < Sinatra::Base
 
   post '/name' do
     player1 = Player.new(params[:player])
-    player2 = Player.new("Computer")
+    player2 = Player.new('Computer')
     $game = Game.new(player1, player2)
     redirect '/play'
   end
@@ -26,7 +28,7 @@ class Battle < Sinatra::Base
   get '/play' do
     @game = $game
     erb :play
-    end
+  end
 
   post '/attack' do
     @game = $game
@@ -77,5 +79,5 @@ class Battle < Sinatra::Base
     erb :game_over
   end
 
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end

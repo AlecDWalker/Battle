@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 feature 'Hit_Points' do
   scenario "show player 2's HP" do
     sign_in_and_play

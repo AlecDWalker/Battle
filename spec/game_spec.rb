@@ -1,24 +1,25 @@
+# frozen_string_literal: true
+
 require 'game'
 
 describe Game do
-
-  subject(:game){described_class.new(player1, player2)}
-  let(:finished_game) {described_class.new(dead_player, player2)}
-  let(:player1) { double :player , hit_points: 60 }
-  let(:player2) { double :player , hit_points: 60 }
-  let(:dead_player) {double :player , hit_points: 0}
+  subject(:game) { described_class.new(player1, player2) }
+  let(:finished_game) { described_class.new(dead_player, player2) }
+  let(:player1) { double :player, hit_points: 60 }
+  let(:player2) { double :player, hit_points: 60 }
+  let(:dead_player) { double :player, hit_points: 0 }
 
   describe '#player1' do
-   it 'retrieves the first player' do
-     expect(game.player1).to eq player1
-   end
- end
+    it 'retrieves the first player' do
+      expect(game.player1).to eq player1
+    end
+  end
 
- describe '#player2' do
-   it 'retrieves the second player' do
-     expect(game.player2).to eq player2
-   end
- end
+  describe '#player2' do
+    it 'retrieves the second player' do
+      expect(game.player2).to eq player2
+    end
+  end
 
   describe '#attack' do
     it 'returns the HP of attacked player' do
