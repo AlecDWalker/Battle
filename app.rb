@@ -16,6 +16,13 @@ class Battle < Sinatra::Base
     redirect '/play'
   end
 
+  post '/name' do
+    player1 = Player.new(params[:player])
+    player2 = Player.new("Computer")
+    $game = Game.new(player1, player2)
+    redirect '/play'
+  end
+
   get '/play' do
     @game = $game
     erb :play
