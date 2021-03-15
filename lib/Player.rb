@@ -15,6 +15,10 @@ class Player
   def receive_damage(damage)
     @hit_points -= damage
   end
+
+  def becomepoisoned
+    @poisoned = true
+  end
 end
 
 class Computer < Player

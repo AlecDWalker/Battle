@@ -22,6 +22,12 @@ describe Player do
       expect(player.hit_points).to eq 50
     end
   end
+  describe '#status effects' do
+    it 'can be poisoned' do
+      player.becomepoisoned
+      expect(player.poisoned).to eq true
+    end
+  end
 end
 
 describe Computer do

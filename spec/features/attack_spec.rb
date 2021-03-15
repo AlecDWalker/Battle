@@ -35,4 +35,5 @@ feature 'Attack' do
     expect(page).not_to have_content 'Dave: 60HP'
     expect(page).to have_content 'Dave: 50HP'
   end
+
 end
