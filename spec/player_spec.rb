@@ -27,6 +27,14 @@ describe Player do
       player.becomepoisoned
       expect(player.poisoned).to eq true
     end
+    it 'can be put to sleep'do
+      player.becomeasleep
+      expect(player.asleep).to eq true
+    end
+    it 'can be paralysed' do
+      player.becomeparalysed
+      expect(player.paralysed).to eq true
+    end
   end
 end
 

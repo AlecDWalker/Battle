@@ -19,6 +19,14 @@ class Player
   def becomepoisoned
     @poisoned = true
   end
+  
+  def becomeasleep
+    @asleep = true
+  end
+
+  def becomeparalysed
+    @paralysed = true
+  end
 end
 
 class Computer < Player
