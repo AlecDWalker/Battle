@@ -9,6 +9,13 @@ describe Player do
     expect(player.name).to eq 'Andy'
   end
 
+  it 'is initializsed with full health and so status effects' do
+    expect(player.hit_points).to eq 60
+    expect(player.paralysed).to eq false
+    expect(player.poisoned).to eq false
+    expect(player.asleep).to eq false
+  end
+
   describe '#receive_damage' do
     it "reduces attacked player's HP by 10" do
       player.receive_damage(10)
