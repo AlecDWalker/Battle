@@ -63,11 +63,13 @@ class Battle < Sinatra::Base
     end
   end
 
-  post '/posionattack' do
+  post '/poisonattack' do
     @game = $game
     @damage = rand(5..8)
     @game.attack(@game.opponent_of(@game.current_turn), @damage)
-    @game.opponent_of(@game.current_turn).poisoned = true
+    if rand(0..10)>5
+      @game.opponent_of(@game.current_turn).becomepoisoned
+    end
     if @game.game_over?
       redirect '/game-over'
     else

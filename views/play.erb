@@ -1,6 +1,11 @@
 <h1><%= @game.player1.name %> vs. <%= @game.player2.name %></h1><br>
 <%= @game.current_turn.name %>'s turn<br>
 
+<%if @game.current_turn.poisoned==true%>
+  <%@game.current_turn.receive_damage(pdamage=rand(1..5))%>
+  <%= @game.current_turn.name%> takes <%=pdamage%> poison damage<br>
+<%end%>
+
   <%= @game.player1.name %>: <%=@game.player1.hit_points%>HP<br>
   <%= @game.player2.name %>: <%=@game.player2.hit_points%>HP<br>
 
@@ -9,6 +14,8 @@
     <input type="submit" value="Okay">
   </form>
   <%else%>
+
+
 
   <form action="/attack" method="post">
     <input type="submit" value="Attack">
