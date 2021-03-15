@@ -17,6 +17,6 @@ end
 class Computer < Player
   def initialize
     @name = 'Computer'
-    @hit_points= DEFAULT_HIT_POINTS
+    @hit_points = DEFAULT_HIT_POINTS
   end
 end

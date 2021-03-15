@@ -5,7 +5,6 @@ require 'Player'
 describe Player do
   subject(:player) { described_class.new('Andy') }
 
-
   it 'returns its name' do
     expect(player.name).to eq 'Andy'
   end
@@ -18,11 +17,11 @@ describe Player do
   end
 end
 
- describe Computer do
-   subject(:computer) {Computer.new}
+describe Computer do
+  subject(:computer) { Computer.new }
 
-   it 'inherits default features from the Player class' do
-     expect(computer.name).to eq 'Computer'
-     expect(computer.hit_points).to eq 60
-   end
- end
+  it 'inherits default features from the Player class' do
+    expect(computer.name).to eq 'Computer'
+    expect(computer.hit_points).to eq 60
+  end
+end
