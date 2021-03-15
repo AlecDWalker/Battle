@@ -1,11 +1,14 @@
 # frozen_string_literal: true
 
 feature 'Attack' do
-  scenario 'Players have 3 seprate atack options' do
+  scenario 'Players have multiple attack options' do
     sign_in_and_play
     expect(page).to have_button 'Attack'
     expect(page).to have_button 'Safe attack'
     expect(page).to have_button 'Risky attack'
+    expect(page).to have_button 'Poison attack'
+    expect(page).to have_button 'Sleep attack'
+    expect(page).to have_button 'Paralyse attack'
   end
   scenario 'Player1 attacks Player2' do
     sign_in_and_play

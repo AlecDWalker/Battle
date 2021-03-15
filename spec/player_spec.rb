@@ -9,7 +9,7 @@ describe Player do
     expect(player.name).to eq 'Andy'
   end
 
-  it 'is initializsed with full health and so status effects' do
+  it 'is initialised with full health and no status effects' do
     expect(player.hit_points).to eq 60
     expect(player.paralysed).to eq false
     expect(player.poisoned).to eq false
