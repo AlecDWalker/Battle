@@ -1,21 +1,22 @@
 <h1><%= @game.player1.name %> vs. <%= @game.player2.name %></h1><br>
-<%= @game.current_turn.name %>'s turn<br>
-
-<%= @game.player1.name %>: <%=@game.player1.hit_points%>HP<br>
-<%= @game.player2.name %>: <%=@game.player2.hit_points%>HP<br>
-
-<form action="/attack" method="post">
-  <input type="submit" value="Attack">
-</form>
-
-<br>
-
+<%= @game.current_turn.name %>'s turn
+<%if @game.current_turn.is_a? Computer %>
 <form action="/safeattack" method="post">
-  <input type="submit" value="Safe attack">
-</form>
+  <input type="submit" value="Okay">
+</form><br>
+<%else%>
+  <%= @game.player1.name %>: <%=@game.player1.hit_points%>HP<br>
+  <%= @game.player2.name %>: <%=@game.player2.hit_points%>HP<br>
 
-<br>
+  <form action="/attack" method="post">
+    <input type="submit" value="Attack">
+  </form><br>
 
-<form action="/riskyattack" method="post">
-  <input type="submit" value="Risky attack">
-</form>
+  <form action="/safeattack" method="post">
+    <input type="submit" value="Safe attack">
+  </form><br>
+
+  <form action="/riskyattack" method="post">
+    <input type="submit" value="Risky attack">
+  </form>
+<%end%>

@@ -19,7 +19,7 @@ describe Player do
 end
 
  describe Computer do
-   subject(:computer) {Computer.new('Billy')}
+   subject(:computer) {Computer.new}
 
    it 'inherits default features from the Player class' do
      expect(computer.name).to eq 'Computer'

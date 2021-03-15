@@ -20,7 +20,7 @@ class Battle < Sinatra::Base
 
   post '/name' do
     player1 = Player.new(params[:player])
-    player2 = Player.new('Computer')
+    player2 = Computer.new
     $game = Game.new(player1, player2)
     redirect '/play'
   end
@@ -71,7 +71,7 @@ class Battle < Sinatra::Base
   post '/switch-turns' do
     @game = $game
     @game.switch_turns
-    redirect('/play')
+    redirect '/play'
   end
 
   get '/game-over' do

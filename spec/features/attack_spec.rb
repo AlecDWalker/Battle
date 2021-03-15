@@ -23,6 +23,7 @@ feature 'Attack' do
     fill_in :player, with: 'Dave'
     click_button 'Start 1 player game'
     attack_and_confirm
+    click_button 'Okay'
     expect(page).to have_content 'Computer attacked Dave'
   end
   scenario 'reduce Player 1 HP by 10 when attacked' do

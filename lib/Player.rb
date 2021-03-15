@@ -6,11 +6,7 @@ class Player
 
   def initialize(name, hit_points = DEFAULT_HIT_POINTS)
     @hit_points = hit_points
-    if self.is_a?(Computer)
-      @name = 'Computer'
-    else
-      @name = name
-    end
+    @name = name
   end
 
   def receive_damage(damage)
@@ -19,4 +15,8 @@ class Player
 end
 
 class Computer < Player
+  def initialize
+    @name = 'Computer'
+    @hit_points= DEFAULT_HIT_POINTS
+  end
 end
